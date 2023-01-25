@@ -1,0 +1,72 @@
+{
+    "name": "Darmi Pyro Userbot",
+    "description": "UserBot BIASA AJAH !!!.",
+    "logo": "https://telegra.ph/file/80ddddfcd915d468bdb1a.png",
+    "keywords": ["telegram", "userbot", "Darmi", "pyrogram"],
+    "repository": "https://github.com/iskandar777-dar/DarmiPyro",
+    "stack": "container",
+    "env": {
+        "STRING_SESSION1": {
+            "description": "fill with the pyrogram V2 session string from @darmistringbot",
+            "required": true
+        },
+        "MONGO_URL": {
+            "description": "Fill there an mongo database from mongodb.com",
+            "required": true,
+            "value": ""
+        },
+        "SUDO_USERS": {
+            "description": "Sudo User",
+            "required": false,
+            "value": ""
+        },
+        "OPENAI_API": {
+            "description": "Jika ingin menggunakan openai, isi openai-api-key",
+            "required": false,
+            "value": ""
+        },
+        "OWNER_ID": {
+            "description": "Fill there your I'd go to @darmirobot pm and type /id",
+            "required": true,
+            "value": "1234567890"
+        },
+        "BOT_TOKEN": {
+            "description": "fill with your bot token get from @BotFather on telegram",
+            "required": true,
+            "value": ""
+        },
+        "BOTLOG_CHATID": {
+            "description": "fill with your Publik LOG Group",
+            "required": false,
+            "value": ""
+        },
+        "CMD_HNDLR": {
+            "description": "Command Handlernya",
+            "required": true,
+            "value": "."
+        },
+        "HEROKU_API_KEY": {
+            "description": "Heroku Api Key",
+            "required": true,
+            "value": "."
+        },
+        "HEROKU_APP_NAME": {
+            "description": "Heroku APP name",
+            "required": true,
+            "value": "."
+        }
+    },
+    "buildpacks": [{
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "basic"
+        }
+    }
+}
