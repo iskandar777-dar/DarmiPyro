@@ -1,4 +1,4 @@
-<img src="https://telegra.ph/file/c78bb1efdeed38ee16eb2.png">
+<img src="https://telegra.ph/file/80ddddfcd915d468bdb1a.png">
 
 <p align="center"> 🔥 Darmi 𝗣𝘆𝗿𝗼 🔥 </p>
 
