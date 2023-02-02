@@ -105,7 +105,7 @@ async def cpingme(client: Client, message: Message):
     filters.command(["pink"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def pingme(client: Client, message: Message):
-    uptime = await get_readable_time((time.time() - StartTime))
+    uptime = await get_readable_time((time.datetime() - StartTime))
     start = datetime.now()
     xx = await message.reply_text("**Pinging.**")
     end = datetime.now()
