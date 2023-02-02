@@ -1,33 +1,14 @@
-import socket
-import sys
-import os
-from re import sub
-from time import time
-import aiohttp
-import requests
-from os import getenv
-import shlex
-import textwrap
-from typing import Tuple
-
-from PIL import Image, ImageDraw, ImageFont
-
+import time
 import random
 import speedtest
 import asyncio
 from pyrogram import Client, filters
 from pyrogram.raw import functions
-from pyrogram.types import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    InlineQueryResultArticle,
-    InputTextMessageContent,
-    Message,
-)
+from pyrogram.types import Message
 from datetime import datetime
 from darmilibs.darmi.helper import SpeedConvert
+from Darmi.helper.cmds import *
 from Darmi import StartTime, app, SUDO_USER
-from Darmi.helper.cmd import*
 from Darmi.modules.bot.inline import get_readable_time
 from Darmi.modules.basic import add_command_help, DEVS
 
