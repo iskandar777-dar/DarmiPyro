@@ -70,17 +70,13 @@ if (
     LOGGER(__name__).warning("STRING SESSION TIDAK DITEMUKAN, SHUTDOWN BOT!")
     sys.exit()
 
-if API_ID:
-   API_ID = API_ID
-else:
-   LOGGER(__name__).warning("WARNING: MEMULAI BOT TANPA API ID")
-   API_ID = "6435225"
+if not API_ID:
+    LOGGER(__name__).warning("API_ID TIDAK DITEMUKAN, SHUTDOWN BOT")
+    sys.exit()
 
-if API_HASH:
-   API_HASH = API_HASH
-else:
-   LOGGER(__name__).warning("WARNING: MEMULAI BOT TANPA API HASH")   
-   API_HASH = "4e984ea35f854762dcde906dce426c2d"
+if not API_HASH:
+    LOGGER(__name__).warning("API_HASH TIDAK DITEMUKAN, SHUTDOWN BOT")
+    sys.exit()
 
 if not BOT_TOKEN:
    LOGGER(__name__).error("WARNING: BOT TOKEN TIDAK DITEMUKAN, SHUTDOWN BOT")
