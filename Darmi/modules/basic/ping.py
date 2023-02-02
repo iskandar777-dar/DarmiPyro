@@ -13,7 +13,7 @@ from pyrogram.types import (
 from datetime import datetime
 from darmilibs.darmi.helper import SpeedConvert
 from Darmi import StartTime, SUDO_USER
-from Darmi import app, cmds 
+from Darmi.helper.cmd import*
 from Darmi.modules.bot.inline import get_readable_time
 from Darmi.modules.basic import add_command_help, DEVS
 from Darmi import cmds
@@ -121,26 +121,7 @@ async def pingme(client: Client, message: Message):
     await asyncio.sleep(1)
     await xx.edit(f"**darmi - Pyro!!🎈**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
     
-@Client.on_message(
-    filters.command("ping", cmds) & (filters.me)
-)
-async def module_ping(client: Client, message: Message):
-    cmd = message.command
-    help_arg = ""
-    bot_username = (await app.get_me()).username
-    if len(cmd) > 1:
-        help_arg = " ".join(cmd[1:])
-    elif not message.reply_to_message and len(cmd) == 1:
-        try:
-            nice = await client.get_inline_bot_results(bot=bot_username, query="ping")
-            await asyncio.gather(
-                message.delete(),
-                client.send_inline_bot_result(
-                    message.chat.id, nice.query_id, nice.results[0].id
-                ),
-            )
-        except BaseException as e:
-            print(f"{e}")
+
 
 @Client.on_message(
     filters.command(["pping"], cmds) & (filters.me | filters.user(SUDO_USER))
