@@ -12,11 +12,10 @@ from pyrogram.types import (
 )
 from datetime import datetime
 from darmilibs.darmi.helper import SpeedConvert
-from Darmi import StartTime, SUDO_USER
+from Darmi import StartTime, app, SUDO_USER
 from Darmi.helper.cmd import*
 from Darmi.modules.bot.inline import get_readable_time
 from Darmi.modules.basic import add_command_help, DEVS
-from Darmi import cmds
 
 class WWW:
     SpeedTest = (
