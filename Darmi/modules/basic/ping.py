@@ -1,3 +1,17 @@
+import socket
+import sys
+import os
+from re import sub
+from time import time
+import aiohttp
+import requests
+from os import getenv
+import shlex
+import textwrap
+from typing import Tuple
+
+from PIL import Image, ImageDraw, ImageFont
+
 import random
 import speedtest
 import asyncio
@@ -126,7 +140,7 @@ async def pingme(client: Client, message: Message):
     filters.command(["pping"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def ppingme(client: Client, message: Message):
-    uptime = await get_readable_time((time.time() - StartTime))
+    uptime = await get_readable_time((time.datetime() - StartTime))
     start = datetime.now()
     xx = await message.reply_text("**0% ▒▒▒▒▒▒▒▒▒▒**")
     try:
