@@ -99,10 +99,9 @@ async def cpingme(client: Client, message: Message):
     filters.command(["pink"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def pingme(client: Client, message: Message):
-    uptime = await get_readable_time((time.datetime() - StartTime))
+    uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     xx = await message.reply_text("**Pinging.**")
-    end = datetime.now()
     await asyncio.sleep(1)
     try:
        await message.delete()
@@ -113,6 +112,8 @@ async def pingme(client: Client, message: Message):
     await xx.edit("**Pinging...**")
     await xx.edit("**Pinging....**")
     await asyncio.sleep(1)
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
     await xx.edit(f"**darmi - Pyro!!🎈**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
     
 
@@ -121,7 +122,7 @@ async def pingme(client: Client, message: Message):
     filters.command(["pping"], cmds) & (filters.me | filters.user(SUDO_USER))
 )
 async def ppingme(client: Client, message: Message):
-    uptime = await get_readable_time((time.datetime() - StartTime))
+    uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     xx = await message.reply_text("**0% ▒▒▒▒▒▒▒▒▒▒**")
     try:
