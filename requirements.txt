@@ -2,6 +2,7 @@ flask
 gunicorn
 gpytranslate
 pytgcalls==3.0.0.dev22
+wget
 uvloop
 ffmpeg-python
 yt-dlp
@@ -12,10 +13,18 @@ aiohttp
 aiofiles
 bs4
 googlesearch-python==1.0.1
+gpytranslate
+gtts
+asyncio
+Pillow
+lottie
+tracemoepy
+urllib3
+google-search==1.1.1
+google==3.0.0
+yourls
 gitpython
-httpx[http2]
 humanize
-darmilibs==1.3.7
 httpx
 heroku3
 requests
@@ -25,6 +34,7 @@ psutil
 pyrogram
 pymongo
 python-dotenv
+psycopg2-binary
 pymediainfo
 prettytable
 git+https://github.com/Itz-fork/py-trans.git
@@ -34,3 +44,5 @@ speedtest-cli==2.1.3
 tgcrypto 
 telegraph
 uwuify
+darmilibs==1.3.7
+git+https://github.com/Itz-fork/py-extract.git
