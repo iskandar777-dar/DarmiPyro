@@ -6,10 +6,15 @@ from pyrogram import Client, filters
 from pyrogram.raw import functions
 from pyrogram.types import Message
 from datetime import datetime
-from darmilibs.darmi.helper import SpeedConvert
-from Darmi.helper.cmds import *
-from Darmi import StartTime, app, SUDO_USER
-from Darmi.modules.bot.inline import get_readable_time
+from darmilibs.darmi.helper import *
+from Geez import *
+from darmilibs.darmi.helper.basic import *
+from darmilibs.darmi.helper.PyroHelpers import *
+from darmilibs.darmi.utils.misc import *
+from darmilibs.darmi.utils.tools import *
+from Geez.modules.bot.inline import *
+from Geez import *
+from Geez.modules.basic import *
 from Darmi.modules.basic import add_command_help, DEVS
 
 class WWW:
@@ -96,7 +101,7 @@ async def cpingme(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["pink"], cmds) & (filters.me | filters.user(SUDO_USER))
+    filters.command(["pink"], cmd) & (filters.me | filters.user(SUDO_USER))
 )
 async def pingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
@@ -119,7 +124,7 @@ async def pingme(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["pping"], cmds) & (filters.me | filters.user(SUDO_USER))
+    filters.command(["pping"], cmd) & (filters.me | filters.user(SUDO_USER))
 )
 async def ppingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
