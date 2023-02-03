@@ -3,7 +3,7 @@ from pyrogram import Client as ren
 
 PREFIX = ["^", "?", "-", "+"]
 
-cmds = [".", "?", "!", "*"] # cmd custom
+cmd = [".", "?", "!", "*"] # cmd custom
 
 command = filters.command
 
